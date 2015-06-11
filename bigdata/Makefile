@@ -1,6 +1,6 @@
 projectName = bigdata
 
-build : delete
+build : 
 	docker build -t $(projectName) .
 
 shell : build
