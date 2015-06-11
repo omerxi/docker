@@ -7,7 +7,7 @@ shell : build
 	docker run -i -t $(projectName) /bin/bash
 
 run : build
-	docker --name $(projectName) --restart always -d -p 9999:9999 $(projectName) /main.sh
+	docker run --name $(projectName) --restart always -d -p 9999:9999 $(projectName) /main.sh
 
 logs :
 	docker logs -f $(projectName)
