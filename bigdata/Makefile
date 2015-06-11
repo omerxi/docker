@@ -6,7 +6,7 @@ build : delete
 shell : build
 	docker run -i -t $(projectName) /bin/bash
 
-run : build
+run : delete build
 	docker run --name $(projectName) --restart always -d -p 9999:9999 $(projectName) /main.sh
 
 logs :
