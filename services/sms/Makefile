@@ -1,5 +1,5 @@
 projectName = sms
-port = 3000
+port = 5000
 
 build :
 	docker build -t $(projectName) .
