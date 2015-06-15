@@ -8,7 +8,7 @@ shell : build
 	docker run -i -t $(projectName) /bin/bash
 
 run : delete build
-	docker run --name $(projectName) --restart always -d -p $(port):$(port) $(projectName) /main.sh
+	docker run --name $(projectName) --restart always -d -P $(projectName) /main.sh
 
 logs :
 	docker logs -f $(projectName)
