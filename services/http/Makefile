@@ -1,5 +1,5 @@
-projectName = bigdata
-port = 9999
+projectName = http
+port = 3000
 
 build :
 	docker build -t $(projectName) .

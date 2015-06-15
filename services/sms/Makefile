@@ -1,4 +1,4 @@
-projectName = www
+projectName = sms
 port = 3000
 
 build :
