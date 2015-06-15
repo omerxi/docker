@@ -1,13 +1,14 @@
 projectName = bigdata
+port = 9999
 
-build : 
+build :
 	docker build -t $(projectName) .
 
 shell : build
 	docker run -i -t $(projectName) /bin/bash
 
 run : delete build
-	docker run --name $(projectName) --restart always -d -p 9999:9999 $(projectName) /main.sh
+	docker run --name $(projectName) --restart always -d -p $(port):$(port) $(projectName) /main.sh
 
 logs :
 	docker logs -f $(projectName)
