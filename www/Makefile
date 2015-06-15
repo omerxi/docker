@@ -1,5 +1,5 @@
 projectName = www
-port = 8080
+port = 3000
 
 build :
 	docker build -t $(projectName) .
