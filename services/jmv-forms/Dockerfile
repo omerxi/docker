@@ -14,13 +14,11 @@ RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" > /
 RUN echo "deb http://dl.bintray.com/sbt/debian /" > /etc/apt/sources.list.d/sbt.list
 RUN apt-get update && apt-get install -y --force-yes sbt
 
-#RUN mkdir omerxi \
-#  && cd omerxi \
-#  && git init \
-#  && git pull https://ab3d5e570d12ca42efb49fbf8c1a6d10355123c8@github.com/jmvanel/semantic_forms.git \
-#  && cd scala/forms_play && sbt dist
-
-RUN git clone git@github.com:jmvanel/semantic_forms.git && cd semantic_forms
+RUN mkdir omerxi \
+  && cd omerxi \
+  && git init \
+  && git pull https://719a976445b17b79df44d138bf16fbf48c959da9@github.com/jmvanel/semantic_forms.git \
+  && cd scala/forms_play && sbt dist
 
 #WORKDIR /omerxi/scala/forms_play
 
