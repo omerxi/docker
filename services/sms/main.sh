@@ -1,2 +1,2 @@
 #!/bin/sh
-npm start
+cd /omerxi/services/sms/ && npm start
