@@ -1,5 +1,5 @@
 projectName = jmv-forms
-port = 7777
+port = 9000
 
 build :
 	docker build -t $(projectName) .

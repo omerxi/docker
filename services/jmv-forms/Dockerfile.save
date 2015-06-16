@@ -20,14 +20,14 @@ RUN mkdir omerxi \
   && git pull https://ab3d5e570d12ca42efb49fbf8c1a6d10355123c8@github.com/jmvanel/semantic_forms.git \
   && cd scala/forms_play && sbt dist
 
-# utiliser package à la place du dist ? toujours effets de bords ?
+RUN sbt "runMain deductions.runtime.sparql_cache.PopulateRDFCache"
+RUN sbt package
 
-WORKDIR /omerxi/scala/forms_play
+RUN cd ../forms
 RUN sbt "runMain deductions.runtime.sparql_cache.PopulateRDFCache"
 
-ADD main.sh /
+ADD main.sh .
 
 RUN updatedb
 
-EXPOSE 9000
-
+EXPOSE 7777
