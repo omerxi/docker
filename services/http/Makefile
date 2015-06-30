@@ -12,7 +12,7 @@ run : delete build
 	--name $(projectName) \
 	--restart always \
 	-d \
-	-p $(port):$(port) \
+	-p 80:$(port) \
 	-v /etc/localtime:/etc/localtime:ro \
 	$(projectName) \
 	/main.sh
