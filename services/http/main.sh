@@ -1,2 +1,3 @@
 #!/bin/sh
-npm start
+git clone https://github.com/omerxi/omerxi.git && cd omerxi/nodejs
+npm install && npm start

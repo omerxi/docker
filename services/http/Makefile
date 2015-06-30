@@ -8,7 +8,14 @@ shell : build
 	docker run -i -t $(projectName) /bin/bash
 
 run : delete build
-	docker run --name $(projectName) --restart always -d -p $(port):$(port) $(projectName) /main.sh
+	docker run \
+	--name $(projectName) \
+	--restart always \
+	-d \
+	-v /root/.ssh:~/.ssh:ro
+	-p $(port):$(port) \
+	$(projectName) \
+	/main.sh
 
 logs :
 	docker logs -f $(projectName)
