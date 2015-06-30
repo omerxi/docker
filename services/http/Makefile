@@ -12,8 +12,8 @@ run : delete build
 	--name $(projectName) \
 	--restart always \
 	-d \
-	-v /root/.ssh:~/.ssh:ro
 	-p $(port):$(port) \
+	-v /etc/localtime:/etc/localtime:ro \
 	$(projectName) \
 	/main.sh
 
